@@ -1,0 +1,123 @@
+.header {
+    background: rgba(16, 16, 29, 0.9);
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 35px 0;
+    }
+
+    &__logo-link {
+        .header__logo-image {
+            width: 100%;
+            max-width: 247px;
+
+            path {
+                transition: 200ms ease all;
+            }
+        }
+
+        &:hover {
+            .header__logo-image path:first-child {
+                fill: $blueLight;
+            }
+        }
+    }
+
+    &__burger {
+        display: none;
+        width: 45px;
+        min-width: 45px;
+        height: 45px;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 0 9px;
+
+        span {
+            display: inline-block;
+            width: 27px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            margin-bottom: 4px;
+            transition: 200ms ease all;
+            position: relative;
+
+            &:nth-child(2) {
+                width: 19px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &--active {
+        .header__burger {
+            span {
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: 3px;
+                }
+
+                &:nth-child(2) {
+                    display: none;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    top: -3px;
+                }
+            }
+        }
+        .header__nav{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 65px;
+            padding: 15px 15px 25px;
+            background: rgba(16, 16, 29, 0.9);
+        }
+    }
+}
+
+@media screen and (max-width: 1365px) {
+    .header {
+        &__container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .header {
+        &__burger {
+            display: inline-flex;
+        }
+
+        &__container {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        &__logo-link {
+            .header__logo-image {
+                max-width: 170px;
+            }
+
+        }
+    }
+}

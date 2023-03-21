@@ -1,0 +1,118 @@
+.info-box {
+    padding-top: 190px;
+    padding-bottom: 200px;
+    background: url('../src/img/bg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &__title {
+        font-size: 48px;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0 0 80px;
+        max-width: 780px;
+        line-height: 56.35px;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__list-title {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__list {
+        margin: 0 0 75px 0;
+        padding: 0 0 0 10px;
+        font-size: 20px;
+        line-height: 24px;
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        max-width: 600px;
+        flex-direction: column;
+
+        &-item {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 5px;
+
+            &::before {
+                content: '-';
+                font-weight: 700;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__buttons-holder {
+        display: flex;
+        align-items: center;
+    }
+
+    &__order-button {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .info-box {
+        padding-top: 120px;
+        padding-bottom: 80px;
+
+        &__title {
+            font-size: 36px;
+            line-height: 1.2;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .info-box {
+        background-position: left;
+        padding-top: 100px;
+        padding-bottom: 50px;
+
+        &__title {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        &__list-title {
+            font-size: 16px;
+        }
+
+        &__list {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .info-box {
+        &__title {
+            max-width: 100%;
+            font-size: 24px;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__buttons-holder {
+            flex-direction: column;
+        }
+
+        &__order-button {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+}

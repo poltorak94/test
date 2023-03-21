@@ -1,0 +1,28 @@
+.button {
+    width: 100%;
+    max-width: 183px;
+    text-align: center;
+    border: 1px solid $white;
+    border-radius: 4px;
+    background: $blue;
+    color: $white;
+    font-size: 13px;
+    padding: 13px 15px;
+    text-transform: uppercase;
+    transition: 200ms ease all;
+
+    &:hover {
+        background: $blueHover;
+    }
+
+    &--white {
+        border-color: #6F6D7B;
+        color: #2A2B30;
+        background: $white;
+        &:hover{
+            background: $whiteHover;
+            color: $white;
+            border-color: $white;
+        }
+    }
+}

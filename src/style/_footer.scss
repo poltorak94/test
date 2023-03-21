@@ -1,0 +1,130 @@
+.footer {
+    font-size: 13px;
+    background: #3D4050;
+    padding: 30px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__copyright {
+        color: $white;
+        margin-right: 80px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 18px;
+            background: #C3C3C3;
+            top: -3px;
+            right: -40px;
+        }
+    }
+
+    &__payments {
+        margin-right: 80px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 18px;
+            background: #C3C3C3;
+            top: 0;
+            right: -40px;
+        }
+    }
+
+    &__link {
+        color: #C3C3C3;
+        transition: 200ms ease all;
+        display: inline-flex;
+        align-items: center;
+        margin-right: 38px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: $white;
+        }
+
+        &-icon {
+            max-width: 20px;
+            margin-right: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 1365px) {
+    .footer {
+        &__container {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &__copyright {
+            width: 100%;
+            margin-right: 0;
+            order: 3;
+            text-align: center;
+            padding-top: 15px;
+
+            &::after {
+                content: none;
+            }
+        }
+
+        &__payments {
+            order: 1;
+            margin-right: 38px;
+
+            &::after {
+                content: none;
+            }
+        }
+
+        &__contacts {
+            order: 2;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer {
+        &__link {
+            margin-right: 15px;
+            margin-bottom: 8px;
+        }
+
+        &__payments {
+            margin-right: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .footer {
+        &__container {
+            flex-direction: column;
+        }
+
+        &__payments, &__contacts {
+            margin-right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+        }
+        &__link{
+            margin-right: 0;
+            margin-bottom: 12px;
+        }
+    }
+}
